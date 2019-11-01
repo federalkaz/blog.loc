@@ -1,0 +1,28 @@
+.jumbotron {
+    margin-top: 30px;
+}
+.card {
+    margin-bottom: 30px;
+}
+#register {
+    text-decoration: none;
+    color: white;
+}
+.share42init {
+    margin-right: 30px;
+}
+#publication {
+    font-size: 0.8rem;
+}
+.comment-for-article {
+    margin-top: 30px;
+}
+#icons_action a {
+    margin-right: 20px;
+}
+#posts_list {
+    margin-top: 30px;
+}
+#link {
+    text-decoration: none;
+}
