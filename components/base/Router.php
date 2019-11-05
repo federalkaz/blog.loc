@@ -31,7 +31,7 @@ class Router
             // сравниваем $uriPattern и $uri
             if (preg_match("~$uriPattern~", $uri)) {
                 // получаем внутренний путь из внешнего согласно правилу
-                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+                $internalRoute = preg_replace("~$uriPattern~i", $path, $uri);
 
                 // определяем какой контроллер и action обрабатывают запрос
                 $segments = explode('/', $internalRoute);
@@ -52,7 +52,7 @@ class Router
 
                 //Создаём объект и вызываем метод
                 $controllerObject = new $controllerName;
-                $result = call_user_func_array([$controllerObject, $actionName], $parameters);
+                $result = @call_user_func_array([$controllerObject, $actionName], $parameters);
                 if ($result != null) {
                     break;
                 }
