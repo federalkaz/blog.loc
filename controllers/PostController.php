@@ -3,6 +3,11 @@
 
 class PostController
 {
+    public function __construct()
+    {
+        echo 'PostController ---> __construct()';
+    }
+
     public function actionIndex()
     {
         echo 'PostController -> actionIndex()';
