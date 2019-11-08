@@ -1,12 +1,12 @@
 <?php
 
+namespace controllers;
 
-class PostController
+
+use components\base\Controller;
+
+class PostController extends Controller
 {
-    public function __construct()
-    {
-        echo 'PostController ---> __construct()';
-    }
 
     public function actionIndex()
     {
@@ -19,5 +19,12 @@ class PostController
         echo '<br>' . $category;
         echo '<br>' . $id;
         echo '<br>' . $parameter1;
+    }
+
+    public function actionCreate()
+    {
+        echo '<pre>';
+        var_dump($this->route);
+        echo '</pre>';
     }
 }
