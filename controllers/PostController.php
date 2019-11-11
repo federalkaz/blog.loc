@@ -2,10 +2,7 @@
 
 namespace controllers;
 
-
-use components\base\Controller;
-
-class PostController extends Controller
+class PostController extends App
 {
 
     public function actionIndex()

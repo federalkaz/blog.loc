@@ -2,15 +2,11 @@
 
 namespace controllers;
 
-class MainController
+class MainController extends App
 {
-    public function __construct()
-    {
-        echo 'MainController ---> __construct()';
-    }
 
     public function actionIndex()
     {
-        echo 'MainController -> actionIndex()';
+        //echo 'MainController -> actionIndex()';
     }
 }

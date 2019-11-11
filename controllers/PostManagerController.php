@@ -2,13 +2,8 @@
 
 namespace controllers;
 
-class PostManagerController
+class PostManagerController extends App
 {
-
-    public function __construct()
-    {
-        echo 'PostManagerController ---> __construct()';
-    }
 
     public function actionIndex()
     {

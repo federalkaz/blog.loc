@@ -51,16 +51,13 @@ class RouterNew
     {
         $uri = self::removeQuerystring($uri);
         if (self::searchRoute($uri)) {
-            //$controller = 'controllers\\' . self::upperCamelCase(self::$route['controller']).'Controller';
             $controller = 'controllers\\' . self::$route['controller'].'Controller';
             if (class_exists($controller)) {
                 $cObj = new $controller(self::$route);
-                echo '<pre>';
-                echo var_dump(self::$route);
-                echo '</pre>';
                 $action = 'action' . self::upperCamelCase(self::$route['action']);
                 if (method_exists($cObj, $action)) {
                     $cObj->$action();
+                    $cObj->getView();
                 } else {
                     echo "<br>Метод <b>$controller::$action</b> не найден!";
                 }
@@ -88,7 +85,6 @@ class RouterNew
                 return '';
             }
         }
-
         return $uri;
     }
 }

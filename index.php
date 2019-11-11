@@ -6,9 +6,9 @@ use components\base\RouterNew;
 // Определяем корневой путь входной точки и записываем его в константу
 define('ROOT', dirname(__FILE__));
 
-$uri = ltrim($_SERVER['REQUEST_URI'], '/');
+define('LAYOUT', 'default');
 
-echo $uri;
+$uri = ltrim($_SERVER['REQUEST_URI'], '/');
 
 // Функция автозагрузки классов-контроллеров
 spl_autoload_register(function ($class){
