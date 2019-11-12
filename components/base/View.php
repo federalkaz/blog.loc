@@ -16,12 +16,17 @@ class View
     public function __construct($route, $layout = '', $view = '')
     {
         $this->route = $route;
-        $this->layout = $layout ?: LAYOUT;
+        if ($layout === false) {
+            $this->layout = false;
+        } else {
+            $this->layout = $layout ?: LAYOUT;
+        }
         $this->view = $view;
     }
 
-    public function render()
+    public function render($vars)
     {
+        if (is_array($vars)) extract($vars);
         $file_view = ROOT . "/views/{$this->route['controller']}/{$this->view}.php";
         ob_start();
         if (file_exists($file_view)) {
